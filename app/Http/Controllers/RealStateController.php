@@ -47,7 +47,7 @@ class RealStateController extends Controller
             ] ,
             'rooms' => 'required',
             'bathrooms' => $bathrooms == 'land' || $bathrooms == 'commercial_ground'  ? 'required' : 'nullable',
-            'comments' => 'required',
+            'comments' => 'nullable',
         ]);
         $realState = RealState::create($validated);
 
@@ -100,7 +100,7 @@ class RealStateController extends Controller
             ] ,
             'rooms' => 'required',
             'bathrooms' => $bathrooms == 'land' || $bathrooms == 'commercial_ground'  ? 'required' : 'nullable',
-            'comments' => 'required',
+            'comments' => 'nullable',
         ]);
         $realState = RealState::find($id);
         $realStateRes = $realState->update($validated);
