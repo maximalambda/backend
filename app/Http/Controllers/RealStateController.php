@@ -49,6 +49,13 @@ class RealStateController extends Controller
             'bathrooms' => 'required',
             'comments' => 'nullable',
         ]);
+
+        if ($bathrooms == 0){
+            if ($request->input('real_state_type') !== 'land' && $request->input('real_state_type') !== 'commercial_ground'){
+                return response()->json(['msg' => 'Bathroom cannot be 0']);
+            }
+        }
+
         $realState = RealState::create($validated);
 
         return response()->json(['msg' => 'Real state stored', 'data' =>$realState ],201);
