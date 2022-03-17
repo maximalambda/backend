@@ -46,7 +46,7 @@ class RealStateController extends Controller
                 },
             ] ,
             'rooms' => 'required',
-            'bathrooms' => $bathrooms == 'land' || $bathrooms == 'commercial_ground'  ? 'required' : 'nullable',
+            'bathrooms' => 'required',
             'comments' => 'nullable',
         ]);
         $realState = RealState::create($validated);
