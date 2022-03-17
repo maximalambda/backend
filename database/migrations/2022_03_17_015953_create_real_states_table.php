@@ -24,8 +24,8 @@ class CreateRealStatesTable extends Migration
             $table->string('city', 64);
             $table->string('country');
             $table->unsignedInteger('rooms');
-            $table->unsignedInteger('bathrooms')->nullable();
-            $table->string('comments', 128);
+            $table->unsignedInteger('bathrooms');
+            $table->string('comments', 128)->nullable();
             $table->timestamps();
             $table->softDeletes();
 

@@ -25,7 +25,7 @@ class RealStateFactory extends Factory
             'city' => $this->faker->city,
             'country' => 'MX', //$this->faker->country,
             'rooms' => rand(1, 3),
-            'bathrooms' => $choose == 'land' || $choose == 'commercial_ground'  ? rand(1, 3) : null,
+            'bathrooms' =>rand(1, 3),
             'comments' => $this->faker->text($maxNbChars = 120),
         ];
     }
